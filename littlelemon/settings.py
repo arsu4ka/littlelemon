@@ -78,6 +78,14 @@ WSGI_APPLICATION = 'littlelemon.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'littlelemon',
+        'USER': 'djangoadmin',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '',
+    },
+    'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
@@ -120,7 +128,7 @@ USE_TZ = True
 
 STATIC_URL = 'restaurant/static/'
 
-STATIC_DIRST = [
+STATIC_DIRS = [
     "restaurant/static"
 ]
 
