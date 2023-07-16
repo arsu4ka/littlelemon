@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # custom
-    "restaurant"
+    # additional libs
+    "rest_framework",
+    # project apps
+    "restaurant",
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,15 @@ WSGI_APPLICATION = 'littlelemon.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    "default": {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'brsvyukpypvz6jwpsxks',
+        'USER': 'ub8g1klby4pablf3',
+        'PASSWORD': 'bhtXied6BhYoA1oiGx8G',
+        'HOST': 'brsvyukpypvz6jwpsxks-mysql.services.clever-cloud.com',
+        'PORT': '3306'
+    },
+    'psql_local': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'littlelemon',
         'USER': 'djangoadmin',
