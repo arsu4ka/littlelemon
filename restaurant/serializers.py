@@ -6,3 +6,10 @@ class MenuItemSerializer(ModelSerializer):
     class Meta:
         model = models.MenuItem
         fields = "__all__"
+
+
+class BookingSerializer(ModelSerializer):
+    class Meta:
+        model = models.Booking
+        fields = "__all__"
+        
