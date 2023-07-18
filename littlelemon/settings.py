@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'littlelemon.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
+    "mysql_web_hosting": {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'brsvyukpypvz6jwpsxks',
         'USER': 'ub8g1klby4pablf3',
@@ -88,13 +88,13 @@ DATABASES = {
         'HOST': 'brsvyukpypvz6jwpsxks-mysql.services.clever-cloud.com',
         'PORT': '3306'
     },
-    'psql_local': {
+    "default": {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'littlelemon',
         'USER': 'djangoadmin',
         'PASSWORD': 'root',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     },
     'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
