@@ -5,7 +5,7 @@ from django.core.validators import MinValueValidator
 class Booking(models.Model):
     name = models.CharField(max_length=255)
     number_of_guests = models.IntegerField(validators=[MinValueValidator(1)])
-    booking_date = models.DateTimeField()
+    booking_date = models.DateTimeField(unique=True)
     
     
 class MenuItem(models.Model):
