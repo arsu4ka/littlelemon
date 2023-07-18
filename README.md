@@ -1,6 +1,6 @@
 # API Docs
 
-## GET */*
+## GET *restaurant/*
 Home page, serves static files
 
 ## GET *admin/*
