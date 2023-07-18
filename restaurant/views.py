@@ -12,10 +12,23 @@ class MenuItemsView(generics.ListCreateAPIView):
     queryset = models.MenuItem.objects.all()
     serializer_class = serializers.MenuItemSerializer
 
+    def get_permissions(self):
+        permission_classes = []
+        if self.request.method == "POST":
+            permission_classes.append(permissions.IsAuthenticated)
+        return [permission() for permission in permission_classes]
+
 
 class SingleMenuItemView(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.MenuItem.objects.all()
     serializer_class = serializers.MenuItemSerializer
+
+    def get_permissions(self):
+        permission_classes = []
+        method = self.request.method
+        if method == "DELETE" or method == "PUT" or method == "PATCH":
+            permission_classes.append(permissions.IsAuthenticated)
+        return [permission() for permission in permission_classes]
 
 
 class BookingViewSet(viewsets.ModelViewSet):
